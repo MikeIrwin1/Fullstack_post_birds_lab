@@ -14,4 +14,13 @@ RequestHelper.prototype.delete = function (id) {
     .then((response) => response.json());
 };
 
+RequestHelper.prototype.postSighting = function (sighting) {
+  return fetch(this.url, {
+    method: 'POST',
+    body: JSON.stringify(sighting),
+    heading: { 'Content-Type': 'application/json'}
+  })
+    .then((response) => response.json());
+};
+
 module.exports = RequestHelper;
